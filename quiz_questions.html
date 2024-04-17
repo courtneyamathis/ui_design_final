@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="race-course">
+    <div class="start-line"></div>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+</div>
+<br>
+
+
+{% if question_number == 1 %}
+<br>
+<h1>Question 1</h1>
+<p>Click on each photo and match it to the correct boat type.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="images">
+                <img src="/static/images/diagram_d&d.png" alt="Image 1" class="image" data-id="1"><br>
+                <img src="/static/images/diagram_d&d.png" alt="Image 2" class="image" data-id="2"><br>
+                <img src="/static/images/diagram_d&d.png" alt="Image 3" class="image" data-id="3"><br>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="boxes">
+                <div class="box" data-id="1">Box 1</div>
+                <div class="box" data-id="2">Box 2</div>
+                <div class="box" data-id="3">Box 3</div>
+            </div>
+        </div>
+    </div>
+    <button id="submitBtnMatching" onclick="submitMatching()">Submit</button>
+    <button id="nextBtn" onclick="goToQuestion2()" style="display: none;">Next</button>
+
+</div>
+
+{% elif question_number == 2 %}
+<h1>Question 2</h1>
+<p>Emma has only ever rowed by herself, but she wants to get in a boat with her best friend, Lexi. Which shell should they ask to rent from the boathouse?
+</p>
+<div id="options">
+    <div id="2a" class="option" onclick="selectOption('2a')">a. Single sculls</div>
+    <div id="2b" class="option" onclick="selectOption('2b')">b. Coxless pair</div>
+    <div id="2c" class="option" onclick="selectOption('2c')">c. Double sculls</div>
+    <div id="2d" class="option" onclick="selectOption('2d')">d. None of the above</div>
+</div>
+<button id="submitBtn" onclick="submitAnswer()">Submit</button>
+<button id="nextBtn" onclick="goToQuestion3()" style="display: none;">Next</button>
+
+
+
+{% elif question_number == 3 %}
+<h1>Question 3</h1>
+<p>During the men’s Eights Finals at the 2024 Olympics, David is in charge of timing the race for the USA. What has to cross the finish before David can stop the clock?
+</p>
+<div id="options">
+    <div id="3a" class="option" onclick="selectOption('3a')">a. The bow ball</div>
+    <div id="3b" class="option" onclick="selectOption('3b')">b. All eight blades</div>
+    <div id="3c" class="option" onclick="selectOption('3c')">c. The stern deck</div>
+    <div id="3d" class="option" onclick="selectOption('3d')">d. The coxswain</div>
+</div>
+<button id="submitBtn" onclick="submitAnswer()">Submit</button>
+<button id="nextBtn" onclick="goToQuestion4()" style="display: none;">Next</button>
+
+
+{% elif question_number == 4 %}
+<h1>Question 4</h1>
+<p>Click on each photo and match it to the correct boat type.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="terms">
+                <div class="box" data-id="1">Rigger</div>
+                <div class="box" data-id="2">Deck</div>
+                <div class="box" data-id="3">Coxswain</div>
+                <div class="box" data-id="1">Oarlock</div>
+                <div class="box" data-id="2">Oar</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="defs">
+                <div class="box" data-id="1">The person in the boat responsible for steering, safety, motivating the crew, and race strategy. </div>
+                <div class="box" data-id="2">A  brace that attaches an oar to a boat</div>
+                <div class="box" data-id="3">The triangular metal device that is bolted onto the side of the boat and holds the oars.                </div>
+                <div class="box" data-id="2">The device one uses to pull or push the water, formerly made of wood and now usually made of carbon fiber.                </div>
+                <div class="box" data-id="3">The part of the shell at the bow and stern that is covered with fiberglass cloth or a thin plastic.                </div>
+            </div>
+        </div>
+    </div>
+    <button id="submitBtnMatching" onclick="submitMatching()">Submit</button>
+    <button id="nextBtn" onclick="goToResults()" style="display: none;">See results!</button>
+
+
+
+{% else %}
+<p>Quiz question not found.</p>
+{% endif %}
+
+{% endblock %}
