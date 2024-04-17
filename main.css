@@ -1,1 +1,139 @@
+.home_header {}
 
+.home_text {}
+
+.lesson1 {}
+
+.lesson2 {}
+
+#dropdown {
+    display: none;
+    /* Initially hide the dropdown */
+}
+
+#dropdown ul {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+}
+
+#dropdown ul li {
+    cursor: pointer;
+}
+
+#dropdown ul li:hover {
+    background-color: #f0f0f0;
+    /* Change background color on hover */
+}
+
+#dropdown2 {
+    display: none;
+    /* Initially hide the dropdown */
+}
+
+#dropdown2 ul {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+}
+
+#dropdown2 ul li {
+    cursor: pointer;
+}
+
+#dropdown2 ul li:hover {
+    background-color: #f0f0f0;
+    /* Change background color on hover */
+}
+
+.race-course {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    position: relative;
+    background-color: lightblue;
+}
+.start-line {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px; /* Adjust height as needed */
+    background-color: white;
+}
+.circle {
+    position: absolute;
+    background-color: white;
+    width: 50px; /* Diameter of circle */
+    height: 50px; /* Diameter of circle */
+    border-radius: 50%; /* Make it a circle */
+}
+.circle1 {
+    left: 10px; /* Adjust position as needed */
+    bottom: 10px; /* Adjust position as needed */
+}
+.circle2 {
+    left: 10px; /* Adjust position as needed */
+    bottom: 70px; /* Adjust position as needed */
+}
+.circle3 {
+    left: 10px; /* Adjust position as needed */
+    bottom: 130px; /* Adjust position as needed */
+}
+
+.images {
+    margin-bottom: 20px;
+}
+.image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+.boxes .box {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+.line {
+    position: absolute;
+    border-top: 1px solid black;
+    z-index: 1; /* Ensure lines are above images and boxes */
+}
+
+.podium {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+.column img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+}
+
+.column:nth-child(1) img {
+    top: 200px;
+}
+
+.column:nth-child(2) img {
+    top: 50px; /* Adjust the height difference */
+}
+
+.column:nth-child(3) img {
+    top: 100px;
+}
+
+#img{
+    height:100px;
+    width:auto;
+}
