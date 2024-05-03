@@ -1,0 +1,481 @@
+/*All Pages*/
+@font-face {
+    font-family: 'Paris2024';
+    src: url('/static/paris-2024-variable-wisabo/Paris2024-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --base-color: #33136b;
+    /* Base color - a shade of blue */
+    --accent-color: white;
+    /* Accent color - a shade of red */
+    --dark-gray: #2c3e50;
+    /* Dark gray */
+    --light-gray: #ecf0f1;
+    /* Light gray */
+    --light_purple: #9989B5;
+    --grayed: #c7c4cc;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, var(--light_purple) 11%, rgba(0, 0, 0, 0) 12%) !important;
+    background-size: 50px 50px;
+    background-repeat: repeat;
+}
+
+/*Nav Bar*/
+.navbar {
+    height: 80px;
+    background-color: var(--base-color) !important;
+}
+
+.icons {
+    height: 20px;
+    width: auto;
+    padding-left: 20px;
+}
+
+.navbar_text {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 2px;
+}
+
+.navbar_text:hover {
+    color: #f4dc8c !important;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: 'Paris2024', sans-serif;
+}
+
+/* Home Page */
+
+.home_button {
+    padding: 10px;
+    /* Padding inside the box */
+    margin: 10px;
+    /* Space between boxes */
+    width: 600px;
+    /* Fixed width for each box */
+    text-align: center;
+    /* Center the text inside the box */
+    font-size: 1.5em;
+    /* Increase the font size */
+}
+
+button {
+    background-color: #33136b;
+    color: white;
+}
+
+button:not(:disabled):hover {
+    background-color: var(--light_purple) !important;
+    color: var(--dark-gray) !important;
+}
+
+.clicked {
+    background-color: white;
+    color: var(--base-color);
+    border: 2px solid var(--base-color);
+}
+
+.greyed {
+    background-color: var(--grayed) !important;
+    color: var(--dark-gray);
+    cursor: not-allowed;
+}
+
+.home_image {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.home_container {
+    display: flex;
+    /* Use flexbox to center the container */
+    flex-direction: column;
+    /* Arrange boxes vertically */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+}
+
+/* Lesson 1 pages*/
+#lesson1Slides,
+#lesson1abbr {
+    padding-left: 200px;
+}
+
+#slideshow {
+    border: 1px solid black;
+    padding: 20px;
+    padding-top: 10px;
+    width: 900px;
+    height: 450px;
+}
+
+.slideshow_image {
+    max-width: 200px;
+    height: auto;
+
+}
+
+#abbrButtons {
+    display: flex;
+    /* Optional: allows you to control button alignment */
+    gap: 10px;
+    /* Optional: space between buttons */
+}
+
+#abbrButtons button {
+    height: 100px;
+    /* Set height to 100px */
+    width: 100px;
+    /* Set width to 100px */
+    font-size: 36px;
+    /* Keep the font size */
+    text-align: center;
+    /* Center the text in the button */
+}
+
+.abbreviation {
+    font-size: 36px;
+}
+
+.abbrImage {
+    height: 250px;
+    width: auto;
+    padding-bottom: 20px;
+}
+
+/* Boat Identification */
+.boatIdContainer {
+    border: 1px solid black;
+    display: none;
+    width: 900px;
+    height: 700px;
+    margin-left: 10px;
+}
+
+.boat_identification {
+    padding: 20px;
+}
+
+.boatIdImage {
+    height: 200px;
+    width: auto;
+}
+
+
+
+
+
+
+/* Pages*/
+#dropdown {
+    display: none;
+}
+
+#dropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+#dropdown ul li {
+    cursor: pointer;
+}
+
+#dropdown ul li:hover {
+    background-color: #f0f0f0;
+    /* Change background color on hover */
+}
+
+#dropdown2 {
+    display: none;
+    /* Initially hide the dropdown */
+}
+
+#dropdown2 ul {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+}
+
+#dropdown2 ul li {
+    cursor: pointer;
+}
+
+#dropdown2 ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.race-course {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-color: lightblue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; /* Align items to the left */
+    gap: 20px;
+    flex-direction: column;
+}
+x
+.circle {
+    position: absolute;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.circle1 {
+    left: 10px;
+    bottom: 10px;
+}
+
+.circle2 {
+    left: 10px;
+    bottom: 70px;
+}
+
+.circle3 {
+    left: 10px;
+    bottom: 130px;
+}
+
+.images {
+    margin-bottom: 20px;
+}
+
+.matching_image {
+    max-width: 250px;
+    height: auto;
+    margin: 20px;
+    border: 1px solid var(--base-color);
+    cursor: grab;
+    /* Indicates draggable */
+    margin-right: 300px;
+}
+
+.matching_image_dropped {
+    max-width: 250px;
+    height: auto;
+    margin: 20px;
+    border: 1px solid var(--base-color);
+    cursor: grab;
+}
+
+.matching_box {
+    width: 250px;
+    height: 140px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--base-color);
+    border: 2px solid var(--base-color);
+    line-height: 50px;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+
+.matching-container {
+    display: flex;
+    /* Use flex layout for alignment */
+    flex-direction: column;
+    /* Organize items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    gap: 20px;
+    /* Add spacing between items */
+}
+
+/*
+  
+  .matching-item {
+    position: relative; /* Keep items in place
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
+  
+  .word_box {
+    width: 150px; 
+    height: 100px;
+    text-align: center;
+    line-height: 100px; 
+    border: none; 
+  }
+  
+
+.matching_box.dropzone {
+    border: 2px dashed #007bff;
+    background-color: #e9ecef; 
+}
+*/
+.line {
+    position: absolute;
+    border-top: 1px solid black;
+    z-index: 1;
+}
+
+.podium {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+.column img {
+    width: 150px;
+    height: auto;
+    position: absolute;
+}
+
+.column:nth-child(1) img {
+    top: 200px;
+}
+
+.column:nth-child(2) img {
+    top: 50px;
+}
+
+.column:nth-child(3) img {
+    top: 100px;
+}
+
+#img {
+    height: 100px;
+    width: auto;
+}
+
+.diagram_image {
+    max-height: 600px;
+    width: auto;
+    position: relative;
+    display: block;
+}
+
+.diagram_button {
+    position: absolute;
+    height: 50px;
+    width: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    position: absolute !important;
+    overflow: visible;
+    /* Ensure content doesn't get hidden by overflow */
+}
+
+#info {
+    position: absolute;
+    top: 350px;
+    left: 50px;
+    width: 200px;
+    height: auto;
+    background: white;
+    border: 1px solid black;
+    z-index: 10;
+    padding: 10px;
+}
+
+.word {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+    cursor: grab;
+    display: inline-block;
+}
+
+.drop-zone {
+    border: 2px dashed gray;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px;
+    display: inline-block;
+    position: absolute;
+    background-color: #f0f0f0;
+}
+
+#review {
+    position: absolute !important;
+}
+
+#nextLessonButton {
+    z-index: 100;
+    /* High z-index to ensure it is on top */
+    position: relative;
+    /* Relative positioning to avoid it getting hidden */
+    padding: 10px;
+    /* Add some padding for better clickability */
+    margin-top: 20px;
+    /* Add margin to create space from other elements */
+    display: block;
+    /* Ensure the button is visible */
+}
+
+.box {
+    border: 1px solid black;
+}
+
+/* Quiz */
+
+.quiz_home {
+    max-width: 900px;
+    padding-left: 80px;
+    font-size: 18px;
+}
+
+.gold {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.selected {
+    background-color: lightblue;
+}
+
+.correct_match {
+    background-color: lightgreen;
+}
+
+.incorrect {
+    background-color: lightcoral;
+}
+
+.raceboat {
+    width: 300px;
+    height: auto;
+    margin: 0;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
