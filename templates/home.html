@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="home_header text-center">Introduction to <br> Olympic Rowing 
+    </h1>
+<p class="home_text text-center">
+    Learn about the sport of rowing ahead the 2024 Summer Olympics! <br>Become the expert at your watch party through two short, interactive lessons.
+</p>
+<img src="/static/images/paris_olympics_logo.png" class="home_image">
+<div class="home_container">
+    <div>
+        <button onclick="window.location.href='/learn/1'" class="home_button lesson1">Lesson 1. Types of Boats</button>
+    </div>
+    <div>
+        <button onclick="window.location.href='/learn/2'" class="home_button lesson2">Lesson 2. Boat Biology</button>
+    </div>
+    <div>
+        <button onclick="window.location.href='/quiz'" class="home_button quiz">Test Your Knowledge</button>
+    </div>
+</div>
+
+
+{% endblock %}
+
