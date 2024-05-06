@@ -9,7 +9,7 @@
 :root {
     --base-color: #33136b;
     /* Base color - a shade of blue */
-    --accent-color: white;
+    --accent-color: #f0e9fb;
     /* Accent color - a shade of red */
     --dark-gray: #2c3e50;
     /* Dark gray */
@@ -23,9 +23,10 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, var(--light_purple) 11%, rgba(0, 0, 0, 0) 12%) !important;
+    background-color: var(--accent-color);
+    /*background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, var(--light_purple) 11%, rgba(0, 0, 0, 0) 12%) !important;
     background-size: 50px 50px;
-    background-repeat: repeat;
+    background-repeat: repeat;*/
 }
 
 /*Nav Bar*/
@@ -124,13 +125,21 @@ button:not(:disabled):hover {
     padding: 20px;
     padding-top: 10px;
     width: 900px;
-    height: 450px;
+    height: 500px;
+    margin-bottom: 20px;
 }
 
 .slideshow_image {
-    max-width: 200px;
-    height: auto;
+    height: 300px;
+    width: auto;
+}
+.slideshow_video {
+    height: 200px;
+    width: auto;
+}
 
+.lesson1review{
+    padding-top: 20px;
 }
 
 #abbrButtons {
@@ -160,6 +169,27 @@ button:not(:disabled):hover {
     width: auto;
     padding-bottom: 20px;
 }
+.reveal-box {
+    display: inline-block;
+    background-color: #33136b;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    width:fit-content;
+    margin-left: 100px;
+}
+
+.reveal-box:hover {
+    background-color: var(--light_purple);
+    color: var(--dark-gray);
+}
+
+.clicked_reveal{
+    background-color: white;
+    color: var(--base-color);
+    border: 2px solid var(--base-color);
+}
 
 /* Boat Identification */
 .boatIdContainer {
@@ -168,6 +198,7 @@ button:not(:disabled):hover {
     width: 900px;
     height: 700px;
     margin-left: 10px;
+    margin-top: 20px;
 }
 
 .boat_identification {
@@ -178,9 +209,28 @@ button:not(:disabled):hover {
     height: 200px;
     width: auto;
 }
+.countImage{
+    height: 180px;
+    width: auto;
+    padding-bottom: 20px;
+    padding-right: 80px;
+}
 
+#boatImage1, #boatImage2, #boatImage3, #boatImage4, #boatImage5, #boatImage6{
+    padding-bottom: 0px !important;
+    padding-top: 20px;
+    height: 200px;
+    width: auto;
+}
 
+.aspect{
+    font-weight: bold;
+    padding-top: 20px;
+}
 
+#returnButton, #returnBoatButton{
+    margin-left: 20px;
+}
 
 
 
@@ -478,4 +528,18 @@ x
     height: auto;
     margin: 0;
     transition: transform 0.5s ease; /* Smooth transition */
+}
+#npc1CountryDisplay, #npc2CountryDisplay, #countryDisplay {
+    display: inline !important; /* Make sure the inner spans stay inline */
+    padding-right: 80px;
+    font-size: large;
+}
+.final_row {
+    display: inline-block !important; /* Ensure elements stay inline */
+    padding-left: 80px;
+}
+
+.quad_img{
+    height: 225px;
+    width:auto;
 }
