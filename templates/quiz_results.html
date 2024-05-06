@@ -3,16 +3,31 @@
 {% block content %}
 
 {% if score >= 7 %}
-    <h3>You won!</h3>
+    <h1>You won!</h1>
+    <img src="/static/images/podium.png" style="width:800px"><br>
+    <div class="final_row"> 
+        Silver: <span id="npc2CountryDisplay"></span> 
+        Gold: <span id="countryDisplay"></span> 
+        Bronze: <span id="npc1CountryDisplay"></span></div>
+
 {% elif score >= 4 %}
-    <h3>Runner up!</h3>
+    <h1>Runner up!</h1>
+    <img src="/static/images/podium.png" style="width:800px">
+    <div class="final_row"> Silver: <span id="countryDisplay"></span>
+    Gold: <span id="npc2CountryDisplay"></span>
+    Bronze: <span id="npc1CountryDisplay"></span></div>
+
 {% else %}
-    <h3>Better luck next time!</h3>
+    <h1>Better luck next time!</h1>
+    <img src="/static/images/podium.png" style="width:800px">
+    <div class="final_row"> 
+        Silver: <span id="npc1CountryDisplay"></span> 
+        Gold: <span id="npc2CountryDisplay"></span> 
+        Bronze: <span id="countryDisplay"></span></div>
+
 {% endif %}
 
-<div>
-    <img src="/static/images/podium.png" style="width:800px">
-</div>
+
 
 
 
