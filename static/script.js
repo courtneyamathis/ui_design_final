@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     var currentPath = window.location.pathname;
+    var isLesson2Unlocked = localStorage.getItem("lesson2Unlocked") === "true";
 
     if (currentPath === "/") {
-        var isLesson2Unlocked = localStorage.getItem("lesson2Unlocked") === "true";
 
         if (isLesson2Unlocked) {
             lesson2Button.disabled = false; // Enable button
@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             quizButton.disabled = true; // Disable button
             quiz.classList.add("greyed");
-            quiz.classList.remove("")
-        }
+           }
     }
 
     var homeButton = document.getElementById("homeButton");
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
         homeButton.addEventListener("click", function () {
             localStorage.setItem("lesson2Unlocked", "false");
             localStorage.setItem("quizUnlocked", "false");
-            console.log("Resetting to only Lesson 1 being unlocked.");
         });
     }
 });
@@ -104,6 +102,15 @@ function nextSlide() {
         if (currentSlide === slides.length - 1) {
             nextButton.innerText = "Next";
         }
+    }
+}
+function revealText() {
+    // Change the clickable box text
+    var revealBox = document.querySelector(".reveal-box");
+    if (revealBox) {
+        revealBox.innerText = "Sweeping!"; // Change the text
+        revealBox.style.pointerEvents = "none"; // Disable further clicks
+        revealBox.classList.add("clicked_reveal");
     }
 }
 
@@ -203,56 +210,52 @@ function actionBoat1() {
 function actionBoat2() {
     hideAllBoatContent()
     document.getElementById("double").style.display = "block";
+    document.getElementById("boat_directions").style.display = "none";
     hideAllBoatButtons()
     hideAllBoatImages()
     boatButton2Clicked = true;
     greenButtonsClicked = 0;
-    checkNextLessonButton();
 }
 
 function actionBoat3() {
     // Show boat content 1 and hide others
     hideAllBoatContent()
     document.getElementById("four").style.display = "block";
-    document.getElementById("returnBoatButton").style.display = "block";
+    document.getElementById("boat_directions").style.display = "none";
     hideAllBoatButtons()
     hideAllBoatImages()
     boatButton3Clicked = true;
     greenButtonsClicked = 0;
-    checkNextLessonButton();
 }
 
 function actionBoat4() {
     hideAllBoatContent()
     document.getElementById("pair").style.display = "block";
-    document.getElementById("returnBoatButton").style.display = "block";
+    document.getElementById("boat_directions").style.display = "none";
     hideAllBoatButtons()
     hideAllBoatImages()
     boatButton4Clicked = true;
     greenButtonsClicked = 0;
-    checkNextLessonButton();
 }
 
 function actionBoat5() {
     hideAllBoatContent()
     document.getElementById("quad").style.display = "block";
-    document.getElementById("returnBoatButton").style.display = "block";
+    document.getElementById("boat_directions").style.display = "none";
     hideAllBoatButtons()
     hideAllBoatImages()
     boatButton5Clicked = true;
     greenButtonsClicked = 0;
-    checkNextLessonButton();
 }
 
 function actionBoat6() {
     hideAllBoatContent()
     document.getElementById("eight").style.display = "block";
-    document.getElementById("returnBoatButton").style.display = "block";
+    document.getElementById("boat_directions").style.display = "none";
     hideAllBoatButtons()
     hideAllBoatImages()
     boatButton6Clicked = true;
     greenButtonsClicked = 0;
-    checkNextLessonButton();
 }
 
 function returnToBoatButtons() {
@@ -261,6 +264,9 @@ function returnToBoatButtons() {
     showAllBoatButtons()
     showAllBoatImages()
     document.getElementById("returnBoatButton").style.display = "none";
+    document.getElementById("boat_directions").style.display = "block";
+    checkNextLessonButton();
+
 }
 
 function hideAllBoatButtons() {
@@ -632,96 +638,96 @@ function updateUserBoatImage() {
     }
     if (selectedCountry === 'United States') {
         if (selectedBoat === 'Single sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/single_usa.png" alt="Single USA Boat" class="raceboat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/single_can.png" alt="Single USA Boat" class="raceboat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/single_gb.png" alt="Single USA Boat" class="raceboat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/single_usa.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/single_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/single_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Double sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/double_usa.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/double_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/double_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/double_usa.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/double_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/double_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Quad sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/quad_usa.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/quad_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/quad_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/quad_usa.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/quad_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/quad_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Coxless four') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/four_usa.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/four_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/four_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/four_usa.png" class="raceboat" >';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/four_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/four_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Coxless pair') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/pair_usa.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/pair_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/pair_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/pair_usa.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/pair_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/pair_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Eight') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/eight_usa.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/eight_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/eight_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/eight_usa.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/eight_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/eight_gb.png" class="raceboat">';
         }
     } else if (selectedCountry === 'Canada') {
         if (selectedBoat === 'Single sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/single_can.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/single_usa.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/single_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/single_can.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/single_usa.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/single_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Double sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/double_can.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/double_usa.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/double_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/double_can.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/double_usa.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/double_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Quad sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/quad_can.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/quad_usa.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/quad_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/quad_can.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/quad_usa.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/quad_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Coxless four') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/four_can.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/four_usa.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/four_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/four_can.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/four_usa.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/four_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Coxless pair') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/pair_can.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/pair_usa.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/pair_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/pair_can.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/pair_usa.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/pair_gb.png" class="raceboat">';
         }
         if (selectedBoat === 'Eight') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/eight_can.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/eight_usa.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/eight_gb.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/eight_can.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/eight_usa.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/eight_gb.png" class="raceboat">';
         }
     } else if (selectedCountry === 'Great Britain') {
         if (selectedBoat === 'Single sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/single_gb.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/single_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/single_usa.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/single_gb.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/single_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/single_usa.png" class="raceboat">';
         }
         if (selectedBoat === 'Double sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/double_gb.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/double_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/double_usa.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/double_gb.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/double_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/double_usa.png" class="raceboat">';
         }
         if (selectedBoat === 'Quad sculls') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/quad_gb.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/quad_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/quad_usa.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/quad_gb.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/quad_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/quad_usa.png" class="raceboat">';
         }
         if (selectedBoat === 'Coxless four') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/four_gb.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/four_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/four_usa.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/four_gb.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/four_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/four_usa.png" class="raceboat">';
         }
         if (selectedBoat === 'Coxless pair') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/pair_gb.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/pair_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/pair_usa.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/pair_gb.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/pair_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/pair_usa.png" class="raceboat">';
         }
         if (selectedBoat === 'Eight') {
-            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/eight_gb.png" alt="Single USA Boat">';
-            npc1Div.innerHTML = '<img src="/static/images/raceboats/eight_can.png" alt="Single USA Boat">';
-            npc2Div.innerHTML = '<img src="/static/images/raceboats/eight_usa.png" alt="Single USA Boat">';
+            userBoatDiv.innerHTML = '<img src="/static/images/raceboats/eight_gb.png" class="raceboat">';
+            npc1Div.innerHTML = '<img src="/static/images/raceboats/eight_can.png" class="raceboat">';
+            npc2Div.innerHTML = '<img src="/static/images/raceboats/eight_usa.png" class="raceboat">';
         }
     } else {
         userBoatDiv.innerHTML = '';
@@ -748,6 +754,8 @@ function submitMatching() {
     let currentPoints = parseInt(localStorage.getItem('pointsCounter'));
     quiz1score.innerText = `Score: ${currentPoints} / 3`; // Display the score
     quiz1score.style.display = "block"; // Make the score div visible
+    document.getElementById("submitBtnMatching").disabled = true;
+    document.getElementById("submitBtnMatching").classList.add("greyed");
     moveNPC1();
     moveNPC2();
     moveUser(points, 1)
@@ -799,6 +807,9 @@ function submitAnswer() {
         moveNPC2();
         moveUser(points, 3)
     }
+    document.getElementById("submitBtn").disabled = true;
+    document.getElementById("submitBtn").classList.add("greyed");
+
 }
 
 // Object to define correct matches
@@ -871,47 +882,24 @@ function submitMatches() {
         moveNPC1();
         moveNPC2();
         moveUser(points, 4)
-
+        document.getElementById("submitBtnMatching").disabled = true;
+        document.getElementById("submitBtnMatching").classList.add("greyed");
     }
 }
 
 
-
-/*
-function selectOption(optionId) {
-    // Remove 'selected' class from all options
-    var options = document.querySelectorAll('.option');
-    options.forEach(function (option) {
-        option.classList.remove('selected');
-    });
- 
-    // Add 'selected' class to the clicked option
-    var selectedOption = document.getElementById(optionId);
-    selectedOption.classList.add('selected');
- 
-    // Show the submit button
-    var submitBtn = document.getElementById('submitBtn');
-    submitBtn.style.display = 'block';
-}
- 
- 
-// Function to handle submitting the answer
- 
- 
-*/
-
 // Function to navigate to the next question
-function goToQuestion2(points) {
+function goToQuestion2() {
     window.location.href = "/quiz/2";
 }
-function goToQuestion3(points) {
+function goToQuestion3() {
     window.location.href = "/quiz/3";
 }
-function goToQuestion4(points) {
+function goToQuestion4() {
     window.location.href = "/quiz/4";
 
 }
-function goToResults(points) {
+function goToResults() {
     var score = parseInt(localStorage.getItem('pointsCounter'));
     ; // Assuming this is where you get the score
     score = parseInt(score); // Convert score to integer
@@ -982,7 +970,7 @@ function moveUser(points, question) {
             if (points == 1) {
                 newPosition = incrementPosition(currentX, 100); // Increment by 33px
             }
-            else{
+            else {
                 newPosition = incrementPosition(currentX, 0); // Increment by 33px
             }
         }
@@ -1040,3 +1028,42 @@ function getCurrentX(transformString) {
 function incrementPosition(currentX, increment) {
     return `translateX(${currentX + increment}px)`;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.includes("/quiz_results")) {
+        var countryChoice = localStorage.getItem("selectedCountry");
+        var boatChoice = localStorage.getItem("selectedBoat");
+        var countryDiv = document.getElementById("countryDisplay"); 
+        var npc1CountryDiv = document.getElementById("npc1CountryDisplay"); 
+        var npc2CountryDiv = document.getElementById("npc2CountryDisplay"); 
+        var boatDiv = document.getElementById("boatDisplay"); 
+        console.log(countryChoice);
+        if (countryChoice == "United States"){
+            var npc1Country = "Canada";
+            var npc2Country = "Great Britain";
+        }
+        else if (countryChoice =="Canada"){
+            var npc1Country = "United States";
+            var npc2Country = "Great Britain";
+        }
+        else {
+            var npc1Country = "Canada";
+            var npc2Country = "United States";
+        }
+
+        if (countryDiv) {
+            countryDiv.innerText = `${countryChoice}`; // Display the selected country
+        }
+        if (npc1CountryDiv) {
+            npc1CountryDiv.innerText = `${npc1Country}`; // Display the selected country
+        }
+        if (npc2CountryDiv) {
+            npc2CountryDiv.innerText = `${npc2Country}`; // Display the selected country
+        }
+
+        if (boatDiv) {
+            boatDiv.innerText = `${boatChoice}`; // Display the selected boat
+        }
+
+    }
+});
