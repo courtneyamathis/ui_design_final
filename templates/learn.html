@@ -32,49 +32,53 @@
             <p>The person in the boat responsible for steering, safety, motivating the crew, and race strategy. The
                 coxswain
                 either sits in the stern or lies in the bow of the boat. Pronounced "Cox'n." </p>
-            <img src="/static/images/coxswain.png" class="slideshow_image">
-            <video src="/static/How to Pronounce Coxswain.mp4" controls class="slideshow_image"></video>
+            <div class="row"> <img src="/static/images/coxswain.png" class="slideshow_image">
+                <video src="/static/How to Pronounce Coxswain.mp4" controls class="slideshow_video"></video>
+            </div>
         </div>
         <div class="slide" style="display: none;">
             <h2>Review</h2>
-            <p>Oar: The device one uses to pull or push the water, formerly made of wood and now usually made of carbon
-                fiber.</p>
-            <p>Sculling: The rowing style in which each rower has two oars.</p>
-            <p>Sweeping: The rowing style in which rowers have one oar each.</p>
-            <p>Coxswain:The person in the boat responsible for steering, safety, motivating the crew, and race strategy.
-                The
-                coxswain either sits in the stern or lies in the bow of the boat. Pronounced "Cox'n." </p>
-            <img src="/static/images/boysintheboat.png" class="slideshow_image">
-            <p>The University of Washington Men’s Team as featured in the movie The Boys in the Boat. Spot the oars and
-                the
-                coxswain! What style of rowing is this?</p>
+            <div class="row lesson1review">
+                <img src="/static/images/boysintheboat.png" class="slideshow_image" style="display: inline-block;">
+                <p>The University of Washington Men’s Team as featured in the movie The
+                    Boys in the Boat. <br>Spot the oars and the coxswain! What style of rowing is this?</p>
+                <div class="reveal-box" onclick="revealText()">Click to reveal</div>
+            </div>
+
         </div>
     </div>
     <button id="nextButton" onclick="nextSlide()">Next Slide</button>
 </div>
 
 <div id="lesson1abbr" style="display: none;">
-    <!-- Different content to show after all slides have been viewed -->
     <h1>How to Read Abbreviations</h1>
-    <p>Each boat type has a different abbreviation made up of two parts, a number and a symbol.<br>
-        The number represents the number of rowers in the boat. (Note: this does not include the coxswain.) The symbol
-        represents the style of rowing. Click on each one to learn which style each represents.</p>
+    <p>Each boat type has a different abbreviation made up of two parts, a number and a symbol.
+        <br> The number represents the number of rowers in the boat. Note this does not include the coxswain.
+        <div class="row">
+            <img src ="/static/images/usa_womens_four.jpeg" class="countImage">
+            <img src ="/static/images/usa_mens_eight.jpeg" class="countImage">
+            <p>How many people can you spot in the image of the first boat? How about the second?</p>
+
+        </div>
+        <br> The symbol represents the style of rowing.
+        <br> Click on each symbol below to learn which style each represents.
+    </p>
     <div id="abbrButtons">
         <button id="abbrXButton" onclick="action1()">X</button>
         <button id="abbrPlusButton" onclick="action2()">+</button>
         <button id="abbrMinusButton" onclick="action3()">-</button>
     </div>
-    <div id="abbrX" style="display: none;">
+    <div id="abbrX" style="display: none; border: 2px solid black;">
         <span class="abbreviation">x : sculling style</span><br>
         <img src="/static/images/sculling_2.png" class="abbrImage"><br>
         <button id="returnButton" onclick="returnToAbbr()">Return</button>
     </div>
-    <div id="abbrPlus" style="display: none;">
+    <div id="abbrPlus" style="display: none; border: 2px solid black;">
         <span class="abbreviation">+ : sweeping style with a coxswain</span><br>
         <img src="/static/images/sweep_2.png" class="abbrImage"><br>
         <button id="returnButton" onclick="returnToAbbr()">Return</button>
     </div>
-    <div id="abbrMinus" style="display: none;">
+    <div id="abbrMinus" style="display: none; border: 2px solid black;">
         <span class="abbreviation">- : sweeping style without a coxswain</span><br>
         <img src="/static/images/coxless_4.png" class="abbrImage"><br>
         <button id="returnButton" onclick="returnToAbbr()">Return</button>
@@ -82,13 +86,11 @@
     <button id="differentContentButton" onclick="nextDifferentContent()" style="display:none">Next</button>
 </div>
 <div id="content3" style="display: none;">
-    <!-- Content #3 -->
     <div class="container">
         <div id="boat_directions">
             <h1>Types of Boats</h1>
             <p>Click on each image to learn more about the 6 types of shells used in the Olympics.</p>
         </div>
-        <!-- First row of images -->
         <div class="row">
             <div class="col-4 text-center">
                 <img id="boatImage1" src="/static/images/single_sculls.png" class="img-fluid" alt="Single Sculls">
@@ -120,7 +122,7 @@
                 <img id="boatImage4" src="/static/images/coxless_pair.png" class="img-fluid" alt="Coxless Pair">
             </div>
             <div class="col-4 text-center">
-                <img id="boatImage5" src="/static/images/quad_sculls.png" class="img-fluid" alt="Quad Sculls">
+                <img id="boatImage5" src="/static/images/quad_sculls.png" class="img-fluid quad_img" alt="Quad Sculls">
             </div>
             <div class="col-4 text-center">
                 <img id="boatImage6" src="/static/images/eight.png" class="img-fluid" alt="Eight">
@@ -146,23 +148,23 @@
     <div id="single" class="boatIdContainer">
         <div class="boat_identification">
             <p>Directions: Click on the correct number, term, or symbol for each aspect to identify the boat.</p>
-            <img src="/static/images/single_sculls.png">
-            <p>Number of people</p>
+            <img src="/static/images/single_sculls.png" class="boatIdImage">
+            <p class="aspect">Number of people</p>
             <button class="correct" onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Number of oars</p>
+            <p class="aspect">Number of oars</p>
             <button class="correct" onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Style</p>
+            <p class="aspect">Style</p>
             <button class="correct" onclick="checkAnswer(event)">Sculling</button>
             <button onclick="checkAnswer(event)">Sweeping</button>
 
-            <p>Abbreviation</p>
+            <p class="aspect">Abbreviation</p>
             <button class="correct" onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
@@ -175,23 +177,23 @@
     <div id="double" class="boatIdContainer">
         <div class="boat_identification">
             <p>Directions: Click on the correct number, term, or symbol for each aspect to identify the boat.</p>
-            <img src="/static/images/double_sculls.png">
-            <p>Number of people</p>
+            <img src="/static/images/double_sculls.png" class="boatIdImage">
+            <p class="aspect">Number of people</p>
             <button onclick="checkAnswer(event)">1</button>
             <button class="correct" onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Number of oars</p>
+            <p class="aspect">Number of oars</p>
             <button onclick="checkAnswer(event)">2</button>
             <button class="correct" onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Style</p>
+            <p class="aspect">Style</p>
             <button class="correct" onclick="checkAnswer(event)">Sculling</button>
             <button onclick="checkAnswer(event)">Sweeping</button>
 
-            <p>Abbreviation</p>
+            <p class="aspect">Abbreviation</p>
             <button onclick="checkAnswer(event)">1</button>
             <button class="correct" onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
@@ -204,23 +206,23 @@
     <div id="pair" class="boatIdContainer">
         <div class="boat_identification">
             <p>Directions: Click on the correct number, term, or symbol for each aspect to identify the boat.</p>
-            <img src="/static/images/coxless_pair.png">
-            <p>Number of people</p>
+            <img src="/static/images/coxless_pair.png" class="boatIdImage">
+            <p class="aspect">Number of people</p>
             <button onclick="checkAnswer(event)">1</button>
             <button class="correct" onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Number of oars</p>
+            <p class="aspect">Number of oars</p>
             <button class="correct" onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Style</p>
+            <p class="aspect">Style</p>
             <button onclick="checkAnswer(event)">Sculling</button>
             <button class="correct" onclick="checkAnswer(event)">Sweeping</button>
 
-            <p>Abbreviation</p>
+            <p class="aspect">Abbreviation</p>
             <button onclick="checkAnswer(event)">1</button>
             <button class="correct" onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
@@ -233,23 +235,23 @@
     <div id="four" class="boatIdContainer">
         <div class="boat_identification">
             <p>Directions: Click on the correct number, term, or symbol for each aspect to identify the boat.</p>
-            <img src="/static/images/coxless_four.png">
-            <p>Number of people</p>
+            <img src="/static/images/coxless_four.png" class="boatIdImage">
+            <p class="aspect">Number of people</p>
             <button onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button class="correct" onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Number of oars</p>
+            <p class="aspect">Number of oars</p>
             <button onclick="checkAnswer(event)">2</button>
             <button class="correct" onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Style</p>
+            <p class="aspect">Style</p>
             <button onclick="checkAnswer(event)">Sculling</button>
             <button class="correct" onclick="checkAnswer(event)">Sweeping</button>
 
-            <p>Abbreviation</p>
+            <p class="aspect">Abbreviation</p>
             <button onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button class="correct" onclick="checkAnswer(event)">4</button>
@@ -262,23 +264,23 @@
     <div id="quad" class="boatIdContainer">
         <div class="boat_identification">
             <p>Directions: Click on the correct number, term, or symbol for each aspect to identify the boat.</p>
-            <img src="/static/images/quad_sculls.png">
-            <p>Number of people</p>
+            <img src="/static/images/quad_sculls.png" class="boatIdImage">
+            <p class="aspect">Number of people</p>
             <button onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button class="correct" onclick="checkAnswer(event)">4</button>
             <button onclick="checkAnswer(event)">8</button>
 
-            <p>Number of oars</p>
+            <p class="aspect">Number of oars</p>
             <button onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button class="correct" onclick="checkAnswer(event)">8</button>
 
-            <p>Style</p>
+            <p class="aspect">Style</p>
             <button class="correct" onclick="checkAnswer(event)">Sculling</button>
             <button onclick="checkAnswer(event)">Sweeping</button>
 
-            <p>Abbreviation</p>
+            <p class="aspect">Abbreviation</p>
             <button onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button class="correct" onclick="checkAnswer(event)">4</button>
@@ -291,23 +293,23 @@
     <div id="eight" class="boatIdContainer">
         <div class="boat_identification">
             <p>Directions: Click on the correct number, term, or symbol for each aspect to identify the boat.</p>
-            <img src="/static/images/eight.png">
-            <p>Number of people</p>
+            <img src="/static/images/eight.png" class="boatIdImage">
+            <p class="aspect">Number of people</p>
             <button onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button class="correct" onclick="checkAnswer(event)">8</button>
 
-            <p>Number of oars</p>
+            <p class="aspect">Number of oars</p>
             <button onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
             <button class="correct" onclick="checkAnswer(event)">8</button>
 
-            <p>Style</p>
+            <p class="aspect">Style</p>
             <button onclick="checkAnswer(event)">Sculling</button>
             <button class="correct" onclick="checkAnswer(event)">Sweeping</button>
 
-            <p>Abbreviation</p>
+            <p class="aspect">Abbreviation</p>
             <button class="correct" onclick="checkAnswer(event)">1</button>
             <button onclick="checkAnswer(event)">2</button>
             <button onclick="checkAnswer(event)">4</button>
@@ -368,7 +370,7 @@
     <div class="drop-zone" id="drop-rigger" style="left: 95px; top: 185px;"></div>
     <div class="drop-zone" id="drop-seat" style="left: 300px; top: 298px;"></div>
     <div class="drop-zone" id="drop-deck" style="left: 320px; top: 435px;"></div>
-    <div class="drop-zone" id="drop-bow" style="left: 110px; top: 42px;"></div>
+    <div class="drop-zone" id="drop-bow" style="left: 110px; top: 62px;"></div>
     <div class="drop-zone" id="drop-footstretcher" style="left: 625px; top: 240px;"></div>
     <div class="drop-zone" id="drop-oarlock" style="left: 620px; top: 110px;"></div>
     <button id="go_to_quiz" style="display: none;" onclick="toQuiz()">Next</button>
