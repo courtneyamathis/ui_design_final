@@ -1,32 +1,36 @@
-
 {% extends "layout.html" %}
 {% block content %}
-
+<div class="quiz_results">
 {% if score >= 7 %}
-    <h1>You won!</h1>
-    <img src="/static/images/podium.png" style="width:800px"><br>
-    <div class="final_row"> 
-        Silver: <span id="npc2CountryDisplay"></span> 
-        Gold: <span id="countryDisplay"></span> 
-        Bronze: <span id="npc1CountryDisplay"></span></div>
-
-{% elif score >= 4 %}
-    <h1>Runner up!</h1>
-    <img src="/static/images/podium.png" style="width:800px">
-    <div class="final_row"> Silver: <span id="countryDisplay"></span>
-    Gold: <span id="npc2CountryDisplay"></span>
+<h1>You won!</h1>
+<img src="/static/images/podium.png" style="width:800px"><br>
+<div class="final_row">
+    Silver: <span id="npc2CountryDisplay"></span>
+    Gold: <span id="countryDisplay" class="user_results"></span>
     Bronze: <span id="npc1CountryDisplay"></span></div>
 
+{% elif score >= 4 %}
+<h1>Runner up!</h1>
+<img src="/static/images/podium.png" style="width:800px">
+<div class="final_row">
+    <span class="user_results"> Silver: <span id="countryDisplay" ></span> </span>
+    <span class="npc_results">Gold: <span id="npc2CountryDisplay"></span></span>
+    <span class="npc_results">Bronze: <span id="npc1CountryDisplay"></span></span>
+</div>
+
 {% else %}
-    <h1>Better luck next time!</h1>
-    <img src="/static/images/podium.png" style="width:800px">
-    <div class="final_row"> 
-        Silver: <span id="npc1CountryDisplay"></span> 
-        Gold: <span id="npc2CountryDisplay"></span> 
-        Bronze: <span id="countryDisplay"></span></div>
+<h1>Better luck next time!</h1>
+<img src="/static/images/podium.png" style="width:800px">
+<div class="final_row row col_md_6">
+    Silver: <span id="npc1CountryDisplay"></span>
+    Gold: <span id="npc2CountryDisplay"></span>
+    Bronze: <span id="countryDisplay" class="user_results"></span></div>
 
 {% endif %}
-
+</div>
+<div class="end_directions"> 
+    Click "play" to retake the quiz, or click "home" to begin again from the beginning.
+</div>
 
 
 
