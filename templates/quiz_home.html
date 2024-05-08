@@ -3,14 +3,14 @@
 <div class="quiz_home">
     <h1>Ready to test your knowledge?</h1>
     <p>
-        <span class="gold">Go for Gold</span> <br>
-        Choose a racing shell and a country to represent in the Virtual 2024 Games! For each question you get correct,
-        your
-        boat will advance on the course. Don’t let the other boats get ahead. Good luck!
+        <span class="gold">Go for Gold in the 2024 Virtual Games!</span> <br>
+        <img src="/static/images/rings.png"><br>
+        Choose a racing shell and a country to represent. For each question you get correct,
+        your boat will advance on the course. Don’t let the other boats get ahead. Good luck!
         <br>
     </p>
-    <button id="countryButton" onclick="toggleDropdown('dropdown')" >Select a country</button>
-    
+    <button id="countryButton" onclick="toggleDropdown('dropdown')">Select a country</button>
+
     <button id="boatButton" onclick="toggleDropdown('dropdown2')">Select a boat</button>
     <div id="dropdown" style="display: none;">
         <ul>
@@ -29,12 +29,10 @@
             <li onclick="selectOption('boat', this)">Eight</li>
         </ul>
     </div>
-
-</div>
-<br>
-<button id="playGameButton" style="display: none; position: absolute; bottom: 10px; right: 10px;"
-    onclick="navigateToQuiz()">
-    Play Game
-</button>
+    <br>
+    <button id="playGameButton" style="display: none; position: absolute; bottom: 10px; right: 10px;"
+        onclick="navigateToQuiz()">
+        Play Game
+    </button>
 </div>
 {% endblock %}
