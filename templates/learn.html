@@ -47,38 +47,32 @@
 
         </div>
     </div>
-    <button id="nextButton" onclick="nextSlide()">Next Slide</button>
+    <button id="nextButton" onclick="nextSlide()">Next</button>
 </div>
 
 <div id="lesson1abbr" style="display: none;">
     <h1>How to Read Abbreviations</h1>
     <p>Each boat type has a different abbreviation made up of two parts, a number and a symbol.
-        <br> The number represents the number of rowers in the boat. Note this does not include the coxswain.
-        <div class="row">
-            <img src ="/static/images/usa_womens_four.jpeg" class="countImage">
-            <img src ="/static/images/usa_mens_eight.jpeg" class="countImage">
-            <p>How many people can you spot in the image of the first boat? How about the second?</p>
-
-        </div>
-        <br> The symbol represents the style of rowing.
-        <br> Click on each symbol below to learn which style each represents.
+        <br> The <span style="font-weight: bold; font-style: italic;">number</span> represents the number of rowers in the boat. Note this does not include the coxswain.
+        <br> The <span style="font-weight: bold; font-style: italic;">symbol</span> represents the style of rowing.
+        <br>Click on each symbol below to learn which style each represents.
     </p>
     <div id="abbrButtons">
         <button id="abbrXButton" onclick="action1()">X</button>
         <button id="abbrPlusButton" onclick="action2()">+</button>
         <button id="abbrMinusButton" onclick="action3()">-</button>
     </div>
-    <div id="abbrX" style="display: none; border: 2px solid black;">
+    <div id="abbrX" style="display: none;">
         <span class="abbreviation">x : sculling style</span><br>
         <img src="/static/images/sculling_2.png" class="abbrImage"><br>
         <button id="returnButton" onclick="returnToAbbr()">Return</button>
     </div>
-    <div id="abbrPlus" style="display: none; border: 2px solid black;">
+    <div id="abbrPlus" style="display: none;">
         <span class="abbreviation">+ : sweeping style with a coxswain</span><br>
         <img src="/static/images/sweep_2.png" class="abbrImage"><br>
         <button id="returnButton" onclick="returnToAbbr()">Return</button>
     </div>
-    <div id="abbrMinus" style="display: none; border: 2px solid black;">
+    <div id="abbrMinus" style="display: none;">
         <span class="abbreviation">- : sweeping style without a coxswain</span><br>
         <img src="/static/images/coxless_4.png" class="abbrImage"><br>
         <button id="returnButton" onclick="returnToAbbr()">Return</button>
